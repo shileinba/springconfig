@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description : TODO
  */
 @SpringBootApplication
-@RestController
 //@EnableDiscoveryClient
 @EnableEurekaClient
 public class ConfigClientApplication {
@@ -24,18 +23,5 @@ public class ConfigClientApplication {
         SpringApplication.run(ConfigClientApplication.class, args);
     }
 
-    @Value("${foo}")
-    String foo;
-    @Value("${democonfigclient.message}")
-    String message;
 
-    @RequestMapping(value = "/hi")
-    public String hi(){
-        return foo;
-    }
-
-    @RequestMapping(value = "/message")
-    public String message(){
-        return message;
-    }
 }
